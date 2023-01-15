@@ -30,6 +30,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Util {
 
@@ -82,9 +83,8 @@ public class Util {
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.child(NodeNames.DEVICE_TOKEN).getValue()!=null){
-                }
-                String deviceToken = dataSnapshot.child(NodeNames.DEVICE_TOKEN).getValue().toString();
+                dataSnapshot.child(NodeNames.DEVICE_TOKEN).getValue();
+                String deviceToken = Objects.requireNonNull(dataSnapshot.child(NodeNames.DEVICE_TOKEN).getValue()).toString();
 
                 JSONObject notification = new JSONObject();
                 JSONObject notificationData = new JSONObject();

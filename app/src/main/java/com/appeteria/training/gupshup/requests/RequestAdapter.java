@@ -1,6 +1,7 @@
 package com.appeteria.training.gupshup.requests;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,11 +39,13 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
     private List<RequestModel>  requestModelList;
     private DatabaseReference databaseReferenceFriendRequests, databaseReferenceChats;
     private FirebaseUser currentUser;
+    RequestCallback requestCallback;
 
 
-    public RequestAdapter(Context context, List<RequestModel> requestModelList) {
+    public RequestAdapter(Context context, List<RequestModel> requestModelList,RequestCallback requestCallback) {
         this.context = context;
         this.requestModelList = requestModelList;
+        this.requestCallback=requestCallback;
     }
 
     @NonNull
@@ -112,12 +115,12 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
 
                                                       String title = "Friend Request Accepted";
                                                       String message= "Friend request accepted by " + currentUser.getDisplayName();
-                                                      Util.sendNotification(context, title, message, userId);
+//                                                      Util.sendNotification(context, title, message, userId);
 
                                                       holder.pbDecision.setVisibility(View.GONE);
                                                       holder.btnDenyRequest.setVisibility(View.VISIBLE);
                                                       holder.btnAcceptRequest.setVisibility(View.VISIBLE);
-
+                                                      requestCallback.callback();
                                                   }
                                                   else
                                                   {
@@ -244,4 +247,8 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
 
         }
     }
+}
+
+interface RequestCallback{
+    void callback();
 }

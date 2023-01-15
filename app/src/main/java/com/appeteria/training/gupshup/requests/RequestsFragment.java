@@ -1,5 +1,6 @@
 package com.appeteria.training.gupshup.requests;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -32,7 +33,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RequestsFragment extends Fragment {
+public class RequestsFragment extends Fragment implements RequestCallback {
 
     private RecyclerView rvRequests;
     private RequestAdapter adapter;
@@ -67,7 +68,7 @@ public class RequestsFragment extends Fragment {
 
         rvRequests.setLayoutManager( new LinearLayoutManager(getActivity()));
         requestModelList = new ArrayList<>();
-        adapter = new RequestAdapter(getActivity(), requestModelList);
+        adapter = new RequestAdapter(getActivity(), requestModelList,this);
         rvRequests.setAdapter(adapter);
 
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -132,6 +133,12 @@ public class RequestsFragment extends Fragment {
 
     }
 
+    @Override
+    public void callback() {
+        Intent intent = requireActivity().getIntent();
+        requireActivity().finish();
+        requireActivity().startActivity(intent);
+    }
 }
 
 
