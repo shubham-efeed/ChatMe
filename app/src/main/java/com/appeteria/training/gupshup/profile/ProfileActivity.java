@@ -114,8 +114,6 @@ progressBar = findViewById(R.id.progressBar);
             }
         });
 
-
-
     }
 
 

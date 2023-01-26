@@ -184,7 +184,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
 
                                         String title = "Friend Request Denied";
                                         String message= "Friend request denied by " + currentUser.getDisplayName();
-                                        Util.sendNotification(context, title, message, userId);
+//                                        Util.sendNotification(context, title, message, userId);
 
 
                                         holder.pbDecision.setVisibility(View.GONE);

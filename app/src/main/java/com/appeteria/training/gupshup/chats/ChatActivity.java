@@ -347,7 +347,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
                             else if(msgType.equals(Constants.MESSAGE_TYPE_VIDEO))
                                 title = "New Video";
 
-                            Util.sendNotification(ChatActivity.this, title, msg, chatUserId);
+//                            Util.sendNotification(ChatActivity.this, title, msg, chatUserId);
 
                             String lastMessage= !title.equals("New Message")?title:msg;
 
