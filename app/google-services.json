@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:654999478422:android:d90b3c63c41647625ae2b7",
+        "mobilesdk_app_id": "1:654999478422:android:89d5109801b418b75ae2b7",
         "android_client_info": {
-          "package_name": "com.appeteria.training.gupshup"
+          "package_name": "com.shubham.training.chatme"
         }
       },
       "oauth_client": [

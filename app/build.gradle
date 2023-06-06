@@ -6,7 +6,7 @@ android {
     buildToolsVersion "29.0.0"
 
     defaultConfig {
-        applicationId "com.appeteria.training.gupshup"
+        applicationId "com.shubham.training.chatme"
         minSdkVersion 16
         targetSdkVersion 29
         versionCode 1

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.appeteria.training.gupshup">
+    package="com.shubham.training.chatme">
 
     <application
         android:allowBackup="true"
@@ -9,25 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".selectfriend.SelectFriendActivity" />
+        <activity android:name="com.shubham.training.chatme.selectfriend.SelectFriendActivity" />
 
-        <activity android:name=".chats.ChatActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name="com.shubham.training.chatme.chats.ChatActivity" />
+        <activity android:name="com.shubham.training.chatme.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MessageActivity" />
-        <activity android:name=".password.ResetPasswordActivity" />
-        <activity android:name=".password.ChangePasswordActivity" />
-        <activity android:name=".profile.ProfileActivity" />
-        <activity android:name=".signup.SignupActivity" />
-        <activity android:name=".login.LoginActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.shubham.training.chatme.MessageActivity" />
+        <activity android:name="com.shubham.training.chatme.password.ResetPasswordActivity" />
+        <activity android:name="com.shubham.training.chatme.password.ChangePasswordActivity" />
+        <activity android:name="com.shubham.training.chatme.profile.ProfileActivity" />
+        <activity android:name="com.shubham.training.chatme.signup.SignupActivity" />
+        <activity android:name="com.shubham.training.chatme.login.LoginActivity" />
+        <activity android:name="com.shubham.training.chatme.MainActivity" />
         <service
-            android:name=".notifications.ChatMessagingService"
+            android:name="com.shubham.training.chatme.notifications.ChatMessagingService"
             android:permission="com.google.android.c2dm.permission.SEND"
             android:enabled="true"
             android:exported="false">
