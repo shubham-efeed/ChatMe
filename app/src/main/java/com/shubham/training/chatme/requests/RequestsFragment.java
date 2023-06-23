@@ -77,7 +77,6 @@ public class RequestsFragment extends Fragment implements RequestCallback {
         databaseReferenceRequests = FirebaseDatabase.getInstance().getReference().child(NodeNames.FRIEND_REQUESTS).child(currentUser.getUid());
 
         tvEmptyRequestsList.setVisibility(View.VISIBLE);
-        progressBar.setVisibility(View.VISIBLE);
 
 
         databaseReferenceRequests.addValueEventListener(new ValueEventListener() {
@@ -128,7 +127,8 @@ public class RequestsFragment extends Fragment implements RequestCallback {
                         , Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
             }
-        });
+        }
+        );
 
 
     }

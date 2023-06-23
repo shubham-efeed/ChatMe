@@ -114,6 +114,8 @@ public class ChatFragment extends Fragment {
             }
         };
 
+        
+
         query.addChildEventListener(childEventListener);
 
         //progressBar.setVisibility(View.VISIBLE);
